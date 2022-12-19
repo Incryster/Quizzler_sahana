@@ -7,7 +7,7 @@ class Quizzler extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 222, 218, 218),
+        backgroundColor: Color.fromARGB(255, 7, 7, 7),
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -32,11 +32,9 @@ class _QuizPageState extends State<QuizPage> {
     'A slug\'s blood is green.?',
   ];
 
-     List<bool>answers = [
-      false,
-      true,
-      true,
-     ];
+
+  List <bool> answers = [false,true,true];
+
 
   int questionNumber = 0;
 
@@ -56,7 +54,7 @@ class _QuizPageState extends State<QuizPage> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
-                  color: Color.fromARGB(255, 3, 3, 3),
+                  color: Color.fromARGB(255, 229, 229, 229),
                 ),
               ),
             ),
@@ -80,15 +78,15 @@ class _QuizPageState extends State<QuizPage> {
 
                 bool correctAnswer = answers[questionNumber];
 
-                if (correctAnswer == true){
-                  print('user got it right');                
-                }
-                else
-                print('user got it wrong');
-
                 setState(() {
-                  questionNumber++;
-                });
+
+                if(correctAnswer == true){
+                  print('user is right');
+                }else{
+                  print('user wrong');
+
+                }
+      
                 print(questionNumber);
               },
             ),
@@ -110,6 +108,7 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked false.
 
+
                  bool correctAnswer = answers[questionNumber];
 
                 if (correctAnswer == false){
@@ -118,6 +117,8 @@ class _QuizPageState extends State<QuizPage> {
                 else
                 print('user got it wrong');
                 
+
+
                 setState(() {
                   questionNumber++;
                 });
@@ -139,3 +140,4 @@ question1: 'You can lead a cow down stairs but not up stairs.', false,
 question2: 'Approximately one quarter of human bones are in the feet.', true,
 question3: 'A slug\'s blood is green.', true,
 */
+// i add a line new line
